@@ -33,7 +33,6 @@ def binarySearch(li, start, end, target):
         return binarySearch(li, mid + 1, end, target)
     else:
         return binarySearch(li, start, mid - 1, target)
-
 def binarySearch_nearest(li, start, end, target):
     """
     # 이하인 수중 가장 큰 곳의 index를 반환 한다.
@@ -60,27 +59,20 @@ def binarySearch_nearest(li, start, end, target):
             return mid - 1
         return binarySearch_nearest(li, start, mid - 1, target)
 
-
+_EQUAL = 123456789
 
 class Solution:
-
-
-
-
     def find_EndIdx(self, li, target):
         #li에서 선택할 수 있는 가장 큰 idx보다 하나 큰 것을 반환한다. 밖에서는 [start, end) 로 쓰기 때문
         if li[0] > target: # 전부 다 큰 경우 -1을 return 한다
             return -9999
         if li[-1] < target: # 전부 다 작 다면 제일 마지막 indx를 return 한다.
             return len(li) -1
-        t= binarySearch_nearest(li, 0, len(li), target)
-        if target == li[t]:
-            return -7777
+        tmp =  binarySearch_nearest(li, 0, len(li), target)
+        if target == li[tmp]:
+            return _EQUAL
         else:
-            return t
-
-
-
+            return tmp
 
     def check(self, li , target, num):
         #리스트 A에서 num만큼 선택해 더한 값이 target과 같을 수 있으면 true, 아니면 false
@@ -91,33 +83,22 @@ class Solution:
         :param num: unsigned int
         :return: boolean // 만들수 있으면True, 아니면 False
         """
-
-        # [:endIdx]
         #init
-        Queue = []
-        endIdx = self.find_EndIdx(li, target)
-        Queue.append({"target": target, "endIdx": endIdx, "num": num})
+        Queue = [{"target": target, "endIdx": self.find_EndIdx(li, target), "num": num}]
+
 
         #iteration
         while Queue:
-            # 계속 확인을 해봐야 되는 상황: target > 0  and endIdx > 0 and num > 0
-            # True 리턴해야 되는 상황 : target == 0, num == 0, endIdx >0
-            #{li, endidx, target, num} -> {li, endidx-1, target, num} {li, updated_endidx, target- li[endidx-1], num-1}
             current = Queue.pop()
-            if current["target"] == 0 and current["endIdx"] == -7777 and current["num"] ==0:
-                print("check")
+            if current["target"] == 0 and current["endIdx"] == _EQUAL and current["num"] ==0:
                 return True
-            if current["target"] > 0 and current["endIdx"] >= 0 and current["num"] > 0:
-                #1 넣을 있는 제일 큰 것을 안 넣을 때
-                Queue.append({"target": current["target"], "endIdx": current["endIdx"]-1, "num": current["num"]})
-                #2 넣을 수 있는 제일 큰 것을 넣을 떄
-                update_target = current["target"]- li[current["endIdx"]]
-                update_endIdx = self.find_EndIdx(li, update_target)
-                if update_target == 0 and current["num"] == 1:
-                    pass
-                else:
-                    Queue.append({"target": update_target, "endIdx": update_endIdx , "num": current["num"]-1})
-
+            if current["target"] > 0 and current["num"] > 0 and current["endIdx"] >=0 :
+                if current["endIdx"]>=0 and current["endIdx"] < len(li):
+                    Queue.append({"target": current["target"], "endIdx": current["endIdx"]-1, "num": current["num"]})
+                    update_target = current["target"]- li[current["endIdx"]]
+                    update_endIdx = self.find_EndIdx(li, update_target)
+                    if update_endIdx >= 0 and current["endIdx"] < len(li):
+                        Queue.append({"target": update_target, "endIdx": update_endIdx , "num": current["num"]-1})
         return False
 
 
@@ -140,16 +121,12 @@ class Solution:
                 target = S*numB/N
                 ret =  self.check(A, target, numB)
                 if ret == True:
-                    a, b = target, numB
-                    print(a)
-                    print(b)
                     return True
 
         return False
 
 if __name__ == '__main__':
-    # solve()
-    arr = [2,12,18,16,19,3]
+    arr = [2,0,5,6,16,12,15,12,4]
 
     s = Solution()
     print(s.splitArraySameAverage(arr))

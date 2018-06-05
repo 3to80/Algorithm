@@ -14,20 +14,18 @@
 
 
 
-# Approach #4 Bit Manipulation [Accepted]
-# Concept
-#
-# If we take XOR of zero and some bit, it will return that bit
-# a \oplus 0 = aa⊕0=a
-# If we take XOR of two same bits, it will return 0
-# a \oplus a = 0a⊕a=0
-# a \oplus b \oplus a = (a \oplus a) \oplus b = 0 \oplus b = ba⊕b⊕a=(a⊕a)⊕b=0⊕b=b
-# So we can XOR all bits together to find the unique number.
-
 class Solution:
     def singleNumber(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        return 2*sum(set(nums)) - sum(nums)
+        ret = 0
+        for i in nums:
+            ret ^= i
+
+        return ret
+
+if __name__ == '__main__':
+    s = Solution()
+    print(s.singleNumber([1,1,2,2,3,3,4,4,5]))

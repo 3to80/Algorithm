@@ -124,17 +124,3 @@ if __name__ == '__main__':
 
 
 
-
-
-A[i:j]
-
-j< p
-
-A[j:p]
-
-
-B[k:l]
-
-l < q
-
-B[l:q]
