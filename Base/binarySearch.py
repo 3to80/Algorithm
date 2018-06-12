@@ -42,3 +42,5 @@ def binarySearch_nearest(li, start, end, target):
         if mid - 1 >= 0 and li[mid - 1] <= target:
             return mid - 1
         return binarySearch_nearest(li, start, mid - 1, target)
+
+
