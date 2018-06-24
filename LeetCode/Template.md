@@ -5,13 +5,35 @@
 
 - - -
 ####Solution
- 
+  
+My solution
+
+- 
+-
+
+Leet solution
+
+- 
+-
+
+
+
 
 - - - 
 ####Analysis
-Time complexity
+My solution
 
-Space complexity
+- Time complexity
+
+- Space complexity
+
+Leet solution
+
+- Time complexity
+
+- Space complexity
+
+
 - - -
 ####Discussion
 - - -
