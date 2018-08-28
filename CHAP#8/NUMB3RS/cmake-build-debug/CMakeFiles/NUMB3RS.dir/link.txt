@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/NUMB3RS.dir/main.cpp.o  -o NUMB3RS 

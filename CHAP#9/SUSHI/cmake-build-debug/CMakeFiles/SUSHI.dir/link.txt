@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/SUSHI.dir/main.cpp.o  -o SUSHI 

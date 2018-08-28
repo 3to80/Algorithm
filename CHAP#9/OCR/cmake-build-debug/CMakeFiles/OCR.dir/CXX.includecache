@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#9/OCR/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+map
+-
+cstring
+-
+math.h
+-
+

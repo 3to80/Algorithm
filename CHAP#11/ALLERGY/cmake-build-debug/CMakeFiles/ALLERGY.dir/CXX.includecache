@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#11/ALLERGY/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+cstring
+-
+map
+-
+algorithm
+-
+

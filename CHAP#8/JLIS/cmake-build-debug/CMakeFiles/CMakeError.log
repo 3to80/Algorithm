@@ -1,0 +1,26 @@
+Detecting C [-std=c11] compiler features failed to compile with the following output:
+Change Dir: /home/jeunghwankim/CLionProjects/Algo_ss/CHAP#8/JLIS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fde0c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fde0c.dir/build.make CMakeFiles/cmTC_fde0c.dir/build
+make[1]: 디렉터리 '/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#8/JLIS/cmake-build-debug/CMakeFiles/CMakeTmp' 들어감
+make[1]: *** 'CMakeFiles/cmTC_fde0c.dir/feature_tests.c.o'에서 필요한 '/home/jeunghwankim/CLionProjects/Algo_ss/CHAP' 타겟을 만들 규칙이 없습니다.  멈춤.
+make[1]: 디렉터리 '/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#8/JLIS/cmake-build-debug/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_fde0c/fast' 타겟에 대한 명령이 실패했습니다
+make: *** [cmTC_fde0c/fast] 오류 2
+
+
+
+Detecting CXX [-std=c++1z] compiler features failed to compile with the following output:
+Change Dir: /home/jeunghwankim/CLionProjects/Algo_ss/CHAP#8/JLIS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_820a2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_820a2.dir/build.make CMakeFiles/cmTC_820a2.dir/build
+make[1]: 디렉터리 '/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#8/JLIS/cmake-build-debug/CMakeFiles/CMakeTmp' 들어감
+make[1]: *** 'CMakeFiles/cmTC_820a2.dir/feature_tests.cxx.o'에서 필요한 '/home/jeunghwankim/CLionProjects/Algo_ss/CHAP' 타겟을 만들 규칙이 없습니다.  멈춤.
+make[1]: 디렉터리 '/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#8/JLIS/cmake-build-debug/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_820a2/fast' 타겟에 대한 명령이 실패했습니다
+make: *** [cmTC_820a2/fast] 오류 2
+
+
+

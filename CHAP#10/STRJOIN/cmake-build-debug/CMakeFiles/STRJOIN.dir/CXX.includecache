@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#10/STRJOIN/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+algorithm
+-
+queue
+-
+

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/OCR.dir/main.cpp.o  -o OCR 

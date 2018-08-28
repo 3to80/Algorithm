@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ETC2.dir/main.cpp.o  -o ETC2 

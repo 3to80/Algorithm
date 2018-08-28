@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#8/QUANTIZE/main.cpp
+iostream
+-
+vector
+-
+fstream
+-
+algorithm
+-
+cstring
+-
+

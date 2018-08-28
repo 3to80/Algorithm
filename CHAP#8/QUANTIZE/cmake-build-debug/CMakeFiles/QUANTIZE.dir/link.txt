@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/QUANTIZE.dir/main.cpp.o  -o QUANTIZE 

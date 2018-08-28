@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#10/MINASTIRITH/main.cpp
+iostream
+-
+fstream
+-
+cstring
+-
+deque
+-
+cmath
+-
+vector
+-
+queue
+-
+algorithm
+-
+

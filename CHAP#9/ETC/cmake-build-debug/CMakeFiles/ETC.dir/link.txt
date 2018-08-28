@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ETC.dir/main.cpp.o  -o ETC 

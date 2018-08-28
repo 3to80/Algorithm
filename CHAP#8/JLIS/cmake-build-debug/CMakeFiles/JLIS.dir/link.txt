@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/JLIS.dir/main.cpp.o  -o JLIS 

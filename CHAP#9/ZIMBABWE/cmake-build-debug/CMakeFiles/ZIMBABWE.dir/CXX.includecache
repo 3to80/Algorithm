@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#9/ZIMBABWE/main.cpp
+iostream
+-
+vector
+-
+cmath
+-
+fstream
+-
+algorithm
+-
+cstring
+-
+assert.h
+-
+typeinfo
+-
+

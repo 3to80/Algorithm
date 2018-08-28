@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ASYMTLING.dir/main.cpp.o  -o ASYMTLING 

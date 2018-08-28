@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ALLERGY2.dir/main.cpp.o  -o ALLERGY2 

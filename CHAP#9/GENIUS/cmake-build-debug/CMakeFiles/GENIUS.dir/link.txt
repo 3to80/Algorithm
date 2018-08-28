@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/GENIUS.dir/main.cpp.o  -o GENIUS 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/MINASTIRITH.dir/main.cpp.o  -o MINASTIRITH 

@@ -1,0 +1,26 @@
+Detecting C [-std=c11] compiler features failed to compile with the following output:
+Change Dir: /home/jeunghwankim/CLionProjects/Algo_ss/CHAP#11/BOARDCOVER2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_96e62/fast"
+/usr/bin/make -f CMakeFiles/cmTC_96e62.dir/build.make CMakeFiles/cmTC_96e62.dir/build
+make[1]: 디렉터리 '/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#11/BOARDCOVER2/cmake-build-debug/CMakeFiles/CMakeTmp' 들어감
+make[1]: *** 'CMakeFiles/cmTC_96e62.dir/feature_tests.c.o'에서 필요한 '/home/jeunghwankim/CLionProjects/Algo_ss/CHAP' 타겟을 만들 규칙이 없습니다.  멈춤.
+make[1]: 디렉터리 '/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#11/BOARDCOVER2/cmake-build-debug/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_96e62/fast' 타겟에 대한 명령이 실패했습니다
+make: *** [cmTC_96e62/fast] 오류 2
+
+
+
+Detecting CXX [-std=c++1z] compiler features failed to compile with the following output:
+Change Dir: /home/jeunghwankim/CLionProjects/Algo_ss/CHAP#11/BOARDCOVER2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bd88c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bd88c.dir/build.make CMakeFiles/cmTC_bd88c.dir/build
+make[1]: 디렉터리 '/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#11/BOARDCOVER2/cmake-build-debug/CMakeFiles/CMakeTmp' 들어감
+make[1]: *** 'CMakeFiles/cmTC_bd88c.dir/feature_tests.cxx.o'에서 필요한 '/home/jeunghwankim/CLionProjects/Algo_ss/CHAP' 타겟을 만들 규칙이 없습니다.  멈춤.
+make[1]: 디렉터리 '/home/jeunghwankim/CLionProjects/Algo_ss/CHAP#11/BOARDCOVER2/cmake-build-debug/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_bd88c/fast' 타겟에 대한 명령이 실패했습니다
+make: *** [cmTC_bd88c/fast] 오류 2
+
+
+
