@@ -1,0 +1,131 @@
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include <bitset>
+#include <cstring>
+
+
+using namespace std;
+
+int C;
+int N; int K; int M; int L;
+
+vector<int> requireSubTable; // requireSubTable[i] 에서 i는 특정 과목, 그 안에 들어있는 값은 이 i라는 과목이 선행에 필요한 과목들이 비트 맵으로 들어있다.
+vector<int> semSubTable;// semSubTable[i]에 들어잉ㅆ는 i는 학기를 의미, semSubTable[i]는 i번째 학기에 개최되는 과목들에 대한 정보가 비트맵으로 들어 있따.
+
+int bitOnCount(int bitmap){
+    // bitmap의 가장 작은 1의 위치 알 수 있는 방법
+    // bitmap bitmap-1
+
+    int ret = 0;
+    int ls_one = (bitmap & (~bitmap + 1));
+    while(ls_one){
+        ++ret;
+        bitmap -= ls_one;
+        ls_one = (bitmap &(~bitmap +1));
+    }
+    return ret;
+}
+  
+
+const int INF = 987654321;
+
+
+/*
+ * init
+ *  - myCource : 0
+ *  - candSem : (1 << M)
+ *
+ * */
+
+int aux[4097][11];
+
+int solve(int pickedClass, int remSemStart){
+    if(bitOnCount(pickedClass)>= K) return 0;
+    if(remSemStart== M) return INF;
+
+    int &ret = aux[pickedClass][remSemStart];
+    if(ret != -1)return ret;
+
+    int minValue = INF;
+
+    // 이번 학기에 들을 수 있는 class들을 찾는다
+    int candClass = (semSubTable[remSemStart] & ~pickedClass);
+
+    // 선수과목 채우지 않은 것을 버린다.
+    for(int cla = 0; cla < N; ++cla){
+        if((candClass & (1 << cla)) and ((pickedClass & requireSubTable[cla]) != requireSubTable[cla])){
+            // L 개 이하의 모든 조합을 생각해야 됨.
+            candClass &= ~(1 << cla);
+        }
+    }
+
+    // 제약조건이 L 현재 수강할 수 있는 과목의 수가 L을 넘으면 안된다.
+
+    for(int subset = candClass; subset > 0; subset = (candClass & (subset - 1))){
+        if(bitOnCount(subset) > L) continue;
+        minValue = min(minValue, solve(pickedClass | subset, remSemStart+1) + 1);
+    }
+
+    minValue = min( minValue, solve(pickedClass, remSemStart+1));
+
+
+
+
+    return ret=minValue;
+}
+
+
+int main() {
+    ifstream inFile;
+
+
+    inFile.open("../input");
+
+    inFile>>C;
+
+    for(int test_case = 0; test_case < C ; ++test_case){
+        inFile>> N; inFile >> K; inFile >> M; inFile >> L;
+
+        requireSubTable.clear();
+        semSubTable.clear();
+        memset(aux, -1, sizeof(int) * 4097* 11);
+
+
+
+        for(int i = 0; i< N; ++i){
+            // 길이가 매 itreration에서 받고 비트맵 넣는다
+            int request = 0;
+
+            int num; inFile>>num;
+
+            for(int j = 0; j < num; ++j){
+                int subj = 0; inFile >> subj;
+                request |= (1 << subj);
+            }
+            requireSubTable.emplace_back(request);
+        }
+
+
+
+        for(int i = 0; i< M; ++i){
+            // 길이를 매 iteration에서 받고  비트맵 만들어서 넣는다
+            int num; inFile >> num;
+            int semInfo= 0;
+            for(int j = 0; j < num; ++j){
+                int sminfo=0; inFile>>sminfo;
+                semInfo |= (1<<sminfo);
+            }
+            semSubTable.emplace_back(semInfo);
+        }
+
+        int ans = solve(0, 0);
+
+        if(ans == INF) cout<<"IMPOSSIBLE"<<endl;
+        else cout<< ans << endl;
+
+
+    }
+
+    return 0;
+}
