@@ -26,7 +26,7 @@ int bitOnCount(int bitmap){
     }
     return ret;
 }
-
+  
 
 const int INF = 987654321;
 
