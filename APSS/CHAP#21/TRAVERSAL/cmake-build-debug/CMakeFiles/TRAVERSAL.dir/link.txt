@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/TRAVERSAL.dir/main.cpp.o  -o TRAVERSAL 

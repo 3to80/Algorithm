@@ -1,0 +1,26 @@
+Detecting C [-std=c11] compiler features failed to compile with the following output:
+Change Dir: /home/jeunghwankim/Algo/Algorithm/APSS/CHAP#21/FORTRESS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_66d8b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_66d8b.dir/build.make CMakeFiles/cmTC_66d8b.dir/build
+make[1]: 디렉터리 '/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#21/FORTRESS/cmake-build-debug/CMakeFiles/CMakeTmp' 들어감
+make[1]: *** 'CMakeFiles/cmTC_66d8b.dir/feature_tests.c.o'에서 필요한 '/home/jeunghwankim/Algo/Algorithm/APSS/CHAP' 타겟을 만들 규칙이 없습니다.  멈춤.
+make[1]: 디렉터리 '/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#21/FORTRESS/cmake-build-debug/CMakeFiles/CMakeTmp' 나감
+Makefile:121: recipe for target 'cmTC_66d8b/fast' failed
+make: *** [cmTC_66d8b/fast] Error 2
+
+
+
+Detecting CXX [-std=c++1z] compiler features failed to compile with the following output:
+Change Dir: /home/jeunghwankim/Algo/Algorithm/APSS/CHAP#21/FORTRESS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4cbe6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4cbe6.dir/build.make CMakeFiles/cmTC_4cbe6.dir/build
+make[1]: 디렉터리 '/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#21/FORTRESS/cmake-build-debug/CMakeFiles/CMakeTmp' 들어감
+make[1]: *** 'CMakeFiles/cmTC_4cbe6.dir/feature_tests.cxx.o'에서 필요한 '/home/jeunghwankim/Algo/Algorithm/APSS/CHAP' 타겟을 만들 규칙이 없습니다.  멈춤.
+make[1]: 디렉터리 '/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#21/FORTRESS/cmake-build-debug/CMakeFiles/CMakeTmp' 나감
+Makefile:121: recipe for target 'cmTC_4cbe6/fast' failed
+make: *** [cmTC_4cbe6/fast] Error 2
+
+
+
