@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/NERD2.dir/main.cpp.o  -o NERD2 
