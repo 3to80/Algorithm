@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/Algo/Algorithm/Backjoon/2048/main.cpp
+iostream
+-
+stdio.h
+-
+vector
+-
+unordered_map
+-
+queue
+-
+cstring
+-
+
