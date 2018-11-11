@@ -118,6 +118,13 @@ int getSquareNum(){
 }
 
 
+
+
+
+
+
+
+
 int main() {
     freopen("../input", "r" , stdin);
 
