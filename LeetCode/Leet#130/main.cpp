@@ -7,8 +7,7 @@
 int ROWNUM;
 int A = ROWNUM -1 
 이렇게 잡고 rownum을 밑에서 값 넣어줄 때 당연히 A 값이 안바뀜. 메모리 할당 될 때 글로벌변수가 더 먼저 할당되고 코드 영역 할당되기 때문
-3) queue에서, push 는 push_back, pop은 pop_front 이다. pop에서 pop_back해서 삽질
-- deque를 쓰는 것이 햇갈리지 않고 더 좋을 거 같다.
+3) queue에서, push 는 push_back, pop은 pop_front 이다. 개념적으로 FIFO 구현을 위해 이러지만, 이 FIFO가 아니게 해도 상관없음. 
 4) queue에 다음에 시도해볼 node들 넣을 때, visit 을 update 해줘야 한다. 
 그래야 같은 level인 경우, 동일한 값의 여러 노드가 나오는 경우를 방지할 수 있다. 
 새로운 거 만들 때 visit을 update!
