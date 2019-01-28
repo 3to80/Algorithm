@@ -1,0 +1,66 @@
+#include <iostream>
+#include <random>
+#include <vector>
+
+using namespace std;
+
+const int T = 19;
+const int INT_NUM = 30;
+const int MIN = 1;
+const int MAX = 13;
+
+vector<int> makeInput(int num, int min, int max){
+    vector<int> ret(num);
+
+    std::mt19937 rng;
+    rng.seed(std::random_device()());
+
+    std::uniform_int_distribution<std::mt19937::result_type> dist(min,max); // distribution in range [1, max]
+    
+    for(int i = 0 ; i < num ; ++i)
+        ret[i] = dist(rng);
+    return ret;    
+}
+
+int aux[] = {2, 3, 5, 3, 4, 6, 12, 9, 6, 10, 10, 10, 12, 4, 10, 6, 9, 6, 8, 6, 6, 4, 11, 13, 12, 7, 13, 3, 11, 5};
+
+/*
+@Logic
+1. greedy, 큰 거부터 무조건 넣는다고 할 때. 
+    nums := input volume arr
+    best := 0
+    @pick 
+        
+    def func(accum, bitmap, nums):
+        #pick
+         - bitmap에서 사용할 수 있고 T-accum과 가장 가깝고 작은 값을 찾는다. 
+         - bitmap을 갱신한다. 
+        #end 
+         - bitmap이 0이면 종료
+        
+        if bitmap == 0:
+            return;
+        //PICK 할 수 있고 T-ACCUM인 것을 찾는다. 
+        pick_idx = search(T-accum, bitmap)
+        if pick_idx == -1:
+            best += 1
+            func(T, bitmap, nums)
+        else:
+            bitmap -= (1<< i)
+            func(accum-nums[i]. bitmap, nums)
+
+    TIME : O(N log N + N log N) =>  O(N logN)
+*/
+
+
+
+int main() {
+    
+    
+    // vector<int> input = makeInput(INT_NUM, MIN, MAX);
+    // for(auto i : input) cout<< i << ", ";
+    sort(aux, aux + INT_NUM, [](int l, int r){return l>r;});
+    
+    
+    return 0;
+}
