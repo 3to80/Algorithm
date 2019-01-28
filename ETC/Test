@@ -2,6 +2,10 @@ Input := (itm_id, c_id, w, l, h) -> (itm_id, c_id, v), v = w * l * h
 @Preprocessing
  - Input 을  c_id 별로 묶음
 
+// 통계상 고객당 
+수량기준으로 약 17개
+상품 종류 기준으로 약 9.5개인데
+
 // c_id 별로 묶음
 @Problem
 
