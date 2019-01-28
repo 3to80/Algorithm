@@ -58,39 +58,63 @@ int best = 0;
 int aux[] = {2, 3, 5, 3, 4, 6, 12, 9, 6, 10, 10, 10, 12, 4, 10, 6, 9, 6, 8, 6, 6, 4, 11, 13, 12, 7, 13, 3, 11, 5};
 int bitmap_s=0;
 
+// int binary_search(const vector<int> &nums, int low, int high, int target){
+//     //target과 같거나 작은 값을 찾는다. 
+//     if(target > nums[0]) return 0;
+//     if(high - low < 1) return -1;
+//     int mid = low + (high-low)/2;
+//     if(nums[mid] == target) return mid;
+//     else if(nums[mid] < target){
+//         if(mid -1 >= 0 and nums[mid-1] > target) return mid;
+//         return binary_search(nums, 0, mid+1, target);
+//     }
+//     else{
+//         if(mid+1 < nums.size() and nums[mid-1] <= target)return mid-1;
+//         return binary_search(nums, mid+1, high, target);
+//     }
+
+// }
 int search(int cap, const vector<int> &bitmap, vector<int> &nums){
     // nums 에서 cap보다 같거나 바로 작은 곳의  idx
     int idx = -1;
     //binary search로 변경
+    // int diff = binary_search(nums, 0, nums.size(), cap);
+    
+    
+    
     for(int i = 0 ; i < nums.size(); ++i){
         if(nums[i] <= cap){
             idx = i;
             break;
         }
     }
+    // cout<<"qwer" << diff << " " << idx<<endl;
+    
     if(idx == -1)return -1;
     
     while(idx >= 0 and bitmap[idx] == 0){
-        idx--;
+        idx++;
     }
     return idx;
 
 }
 
-void func(int accum, vector<int> &bitmap, vector<int> nums){
+void func(int accum, vector<int> &bitmap, vector<int>& nums){
     if(bitmap_s == 0) return;    
     
     // bitmap이 1이고,  T-accum보다 작으며 가장 가까운 수를 찾는다. 
     int pick_idx = search(T-accum, bitmap, nums);
-    cout<<pick_idx<<endl;
     if(pick_idx == -1){
         best += 1;
-        func(T, bitmap, nums);
+        func(0, bitmap, nums);
         return;
     }
+    
     else{
         bitmap[pick_idx] = 0; bitmap_s -=1;
+        
         func(accum + nums[pick_idx], bitmap, nums);
+        return;
     }
 }
 
@@ -104,10 +128,16 @@ int main() {
     bitmap_s = nums.size();
     sort(nums.begin(), nums.end(), [](int l, int r){return l > r;});
     vector<int> bitmap(INT_NUM, 1);
+    for(auto i : nums){
+        cout << i << " ,";
+    }
+    cout<<endl;
+    int Sum = accumulate(nums.begin(), nums.end(), 0);
+    
     
     func(0, bitmap, nums);
     cout<<best << endl;
-    
+    cout << Sum/T;
     
     
     
