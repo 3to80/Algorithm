@@ -22,11 +22,11 @@ vector<int> makeInput(int num, int min, int max){
     return ret;    
 }
 
-int aux[] = {2, 3, 5, 3, 4, 6, 12, 9, 6, 10, 10, 10, 12, 4, 10, 6, 9, 6, 8, 6, 6, 4, 11, 13, 12, 7, 13, 3, 11, 5};
 
 /*
 @Logic
 1. greedy, 큰 거부터 무조건 넣는다고 할 때. 
+ - 개인이 주문하는 제품은 아무리 많아봤자 64개 이하라는 가정. bitmap longlong 
     nums := input volume arr
     best := 0
     @pick 
@@ -36,22 +36,63 @@ int aux[] = {2, 3, 5, 3, 4, 6, 12, 9, 6, 10, 10, 10, 12, 4, 10, 6, 9, 6, 8, 6, 6
          - bitmap에서 사용할 수 있고 T-accum과 가장 가깝고 작은 값을 찾는다. 
          - bitmap을 갱신한다. 
         #end 
-         - bitmap이 0이면 종료
+         - all bitmap이 0이면 종료 // bitmap sum을 따로 갖고 있고 없어질 때마다 빼는 식으로 하면 O(1)에 확인 가능 
         
         if bitmap == 0:
             return;
-        //PICK 할 수 있고 T-ACCUM인 것을 찾는다. 
+        //PICK 할 수 있고 T-ACCUM인 것을 찾는다. binary search 이후, bitmap 만족하는  idx 찾아 하나씩 내려가기
         pick_idx = search(T-accum, bitmap)
         if pick_idx == -1:
             best += 1
             func(T, bitmap, nums)
         else:
-            bitmap -= (1<< i)
+            bitmap[i] = 0;
             func(accum-nums[i]. bitmap, nums)
 
     TIME : O(N log N + N log N) =>  O(N logN)
+    Space : O(N) , bitmap
 */
 
+
+int best = 0;
+int aux[] = {2, 3, 5, 3, 4, 6, 12, 9, 6, 10, 10, 10, 12, 4, 10, 6, 9, 6, 8, 6, 6, 4, 11, 13, 12, 7, 13, 3, 11, 5};
+int bitmap_s=0;
+
+int search(int cap, const vector<int> &bitmap, vector<int> &nums){
+    // nums 에서 cap보다 같거나 바로 작은 곳의  idx
+    int idx = -1;
+    //binary search로 변경
+    for(int i = 0 ; i < nums.size(); ++i){
+        if(nums[i] <= cap){
+            idx = i;
+            break;
+        }
+    }
+    if(idx == -1)return -1;
+    
+    while(idx >= 0 and bitmap[idx] == 0){
+        idx--;
+    }
+    return idx;
+
+}
+
+void func(int accum, vector<int> &bitmap, vector<int> nums){
+    if(bitmap_s == 0) return;    
+    
+    // bitmap이 1이고,  T-accum보다 작으며 가장 가까운 수를 찾는다. 
+    int pick_idx = search(T-accum, bitmap, nums);
+    cout<<pick_idx<<endl;
+    if(pick_idx == -1){
+        best += 1;
+        func(T, bitmap, nums);
+        return;
+    }
+    else{
+        bitmap[pick_idx] = 0; bitmap_s -=1;
+        func(accum + nums[pick_idx], bitmap, nums);
+    }
+}
 
 
 int main() {
@@ -59,7 +100,16 @@ int main() {
     
     // vector<int> input = makeInput(INT_NUM, MIN, MAX);
     // for(auto i : input) cout<< i << ", ";
-    sort(aux, aux + INT_NUM, [](int l, int r){return l>r;});
+    vector<int> nums(&aux[0], &aux[INT_NUM]);
+    bitmap_s = nums.size();
+    sort(nums.begin(), nums.end(), [](int l, int r){return l > r;});
+    vector<int> bitmap(INT_NUM, 1);
+    
+    func(0, bitmap, nums);
+    cout<<best << endl;
+    
+    
+    
     
     
     return 0;
