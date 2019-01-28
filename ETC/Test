@@ -16,14 +16,16 @@ V를 disjoint set 으로 나눈다고 하자. 이 때 disjoint set의 값들의 
 
 
 @Preporcesiing
- - v_k > T인 v_k 들은 필터링
+ - v_k > T인 v_k 들은 필터링 
+ - v_k + min(v) > T 인 것들은 하나만 포장 되어야 되기 때문에 필터링 (NUM_ONE_BOX)
+ 
  
 
 @Idea
 
 - brute force + pruning
 - 상자 개수의 approximation 값을 구하고 (e.g sigma(v)/T) 여기에 대입해본다. 항상 이 값보다는 상자 개수가 크거나 같은 것을 알 수 있다. 
-- greedy : 물건들을 상자에 넣을 때, 상자의 여분 값의 합이 가장 작게 greedy 쓰기
+- greedy +Binarysearch: 물건들을 상자에 넣을 때, 상자의 여분 값의 합이 가장 작게 greedy 쓰기
 - knapsack + approximation / bounded knapsack 
  => 가방 용량이 T인 것들이 여러개 있을 때, residual의 합이 최소값이 되게
  
