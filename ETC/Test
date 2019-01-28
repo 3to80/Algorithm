@@ -44,6 +44,11 @@ http://math.mit.edu/~goemans/18434S06/knapsack-katherine.pdf
 https://ocw.mit.edu/courses/sloan-school-of-management/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/lecture-notes/MIT15_083JF09_lec21.pdf
 // KNAPSACK 자료
 http://web.cs.iastate.edu/~cs511/handout08/Approx_Knapsack.pdf
+// Genetic Algo 
+https://dspace.inha.ac.kr/bitstream/10505/23724/1/24803.pdf
+// Anealing
+https://www.math.wustl.edu/~feres/Math350Fall2012/Projects/mathproj09.pdf
+http://www.codesandscripts.com/2017/09/knapsack-problem-using-simulated-annealing.html
 E.G
 T := 7
 V := 1, 3, 3, 3, 5, 6
