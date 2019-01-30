@@ -26,8 +26,11 @@ Intro
 
 Problem analysis
 
+- INPUT RAW DATA :
+PK : (SHPP_NO, SHPP_ITEM_SEQ). FK(OFF_ITM_ID), ITM_NUMBER
+PK : OFF_ITM_ID
+-> 고객당 PACKING 되어야 하는 ITEM들의 VOLUME값을 List 형태로 데이터화
 ============================ P  ==============================
-
 Bin-packing problem
 
 ============================ P  ==============================
