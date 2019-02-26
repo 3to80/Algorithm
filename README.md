@@ -1,2 +1,2 @@
-# Algorithm
+# Initial page
 
