@@ -1,0 +1,26 @@
+Detecting C [-std=c11] compiler features failed to compile with the following output:
+Change Dir: /home/jeunghwankim/Algo/Algorithm/APSS/CHAP#28/WORDCHAIN/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_07f6f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_07f6f.dir/build.make CMakeFiles/cmTC_07f6f.dir/build
+make[1]: 디렉터리 '/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#28/WORDCHAIN/cmake-build-debug/CMakeFiles/CMakeTmp' 들어감
+make[1]: *** 'CMakeFiles/cmTC_07f6f.dir/feature_tests.c.o'에서 필요한 '/home/jeunghwankim/Algo/Algorithm/APSS/CHAP' 타겟을 만들 규칙이 없습니다.  멈춤.
+make[1]: 디렉터리 '/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#28/WORDCHAIN/cmake-build-debug/CMakeFiles/CMakeTmp' 나감
+Makefile:121: recipe for target 'cmTC_07f6f/fast' failed
+make: *** [cmTC_07f6f/fast] Error 2
+
+
+
+Detecting CXX [-std=c++1z] compiler features failed to compile with the following output:
+Change Dir: /home/jeunghwankim/Algo/Algorithm/APSS/CHAP#28/WORDCHAIN/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0797c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0797c.dir/build.make CMakeFiles/cmTC_0797c.dir/build
+make[1]: 디렉터리 '/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#28/WORDCHAIN/cmake-build-debug/CMakeFiles/CMakeTmp' 들어감
+make[1]: *** 'CMakeFiles/cmTC_0797c.dir/feature_tests.cxx.o'에서 필요한 '/home/jeunghwankim/Algo/Algorithm/APSS/CHAP' 타겟을 만들 규칙이 없습니다.  멈춤.
+make[1]: 디렉터리 '/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#28/WORDCHAIN/cmake-build-debug/CMakeFiles/CMakeTmp' 나감
+Makefile:121: recipe for target 'cmTC_0797c/fast' failed
+make: *** [cmTC_0797c/fast] Error 2
+
+
+

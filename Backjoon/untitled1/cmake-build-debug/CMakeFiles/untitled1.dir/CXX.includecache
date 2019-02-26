@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/Algo/Algorithm/Backjoon/untitled1/main.cpp
+bits/stdc++.h
+-
+vector
+-
+set
+-
+map
+-
+string
+-
+cstdio
+-
+cstdlib
+-
+climits
+-
+utility
+-
+algorithm
+-
+cmath
+-
+queue
+-
+stack
+-
+iomanip
+-
+iostream
+-
+

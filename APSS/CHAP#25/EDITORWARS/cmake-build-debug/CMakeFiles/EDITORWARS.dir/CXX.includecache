@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#25/EDITORWARS/main.cpp
+iostream
+-
+stdio.h
+-
+vector
+-
+

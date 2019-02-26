@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#28/DICTIONARY/main.cpp
+iostream
+-
+stdio.h
+-
+vector
+-
+algorithm
+-
+

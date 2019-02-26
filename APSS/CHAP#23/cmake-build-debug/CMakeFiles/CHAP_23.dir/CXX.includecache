@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#23/main.cpp
+iostream
+-
+queue
+-
+stdio.h
+-
+

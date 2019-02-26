@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#22/untitled/main.cpp
+iostream
+-
+sstream
+-
+string
+-
+stdio.h
+-
+unordered_map
+-
+set
+-
+string
+-
+vector
+-
+

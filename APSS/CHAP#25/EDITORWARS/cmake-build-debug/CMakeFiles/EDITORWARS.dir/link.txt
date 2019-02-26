@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/EDITORWARS.dir/main.cpp.o  -o EDITORWARS 

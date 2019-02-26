@@ -1,103 +1,74 @@
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
-
 #include <iostream>
+#include <vector>
+#include <queue>
+#include <cmath>
+#include <cstring>
+
 
 using namespace std;
 
 
-
-struct ListNode{
-     int val;
-     ListNode *next;
-     ListNode(int x) : val(x), next(NULL) {}
-};
-
-
+int dr[3] = {-1, 0, 1};
+int dc[3] = {-1, 0, 1};
 
 
 
 class Solution {
 public:
-
-    void print(ListNode *itm, int k){
-        int cnt = 0;
-        while( itm ){
-            if(cnt == k) break;
-            cout<<itm->val << " ";
-            itm = itm->next;
-            ++cnt;
+    void search(int row, int col, const vector<vector<char>>&  grid, vector<vector<bool>>& visited){
+        typedef pair<int, int> Point;
+        deque<Point> aux;
+        aux.push_back(make_pair(row, col));
+        while(not aux.empty()){
+//            aux.front();
+            Point node = aux.front();
+            aux.pop_front();
+            // cand를 만들고, visite check를 해줘야 한다.
+            for(int i = 0; i < 3; ++i){
+                for(int j = 0; j < 3; ++j){
+                    if( i== 1 and j==1) continue;
+                    int cr = node.first+dr[i];int cc = node.second+dc[j];
+                    if(cr < 0 or cr >= grid.size() or cc <0 or cc >= grid[0].size()) continue;
+                    if(grid[cr][cc] == '0')continue;
+                    if(visited[cr][cc]) continue;
+                    visited[cr][cc] = true;
+                    aux.push_back(make_pair(cr, cc));
+                }
+            }
         }
-        cout << endl;
     }
 
+    int numIslands(vector<vector<char>>& grid) {
+        int ROW = grid.size(); if(ROW == 0) return 0;
+        int COL = grid[0].size(); if(COL == 0) return 0;
+        int ret = 0;
 
-    void print(ListNode *itm){
-        while( itm ){
-            cout<<itm->val << " ";
-            itm = itm->next;
-        }
-        cout << endl;
-    }
-    ListNode *makeTest(int n){
-        ListNode *ret = new ListNode(0);
-        ListNode *cur = ret;
-        for(int i = 1; i < n ; ++i, cur = cur->next){
-            cur->next = new ListNode(i);
-        }
+        vector<vector<bool>> visited(ROW, vector<bool>(COL, false));
+        for(int row = 0; row < ROW; ++row){
+            for(int col = 0; col < COL; ++col){
+                char point = grid[row][col];
+                if(point == '0')continue;
+                if(visited[row][col])continue;
+                ret += 1;
+                search(row, col, grid, visited); // 끝나면 현재row, col과 연결된 곳들은 모두 방문함 상태로(visited) 변경되어야 한다.
 
+            }
+
+        }
         return ret;
 
     }
-
-
-    // Solution 1.
-    ListNode *get_end_node(ListNode *pick, int target){
-        ListNode *ret = pick;
-        for(int i = 0; i < target; ++i){
-            if(ret == nullptr)break;
-            ret = ret->next;
-        }
-        return ret;
-    }
-
-    void swap(ListNode *head, ListNode *tail, int k){
-        for(int j = 0; j < k-1; ++j){
-            ListNode *tmp = head->next;
-            head->next = tail->next;
-            tail->next= head;
-            head= tmp;
-        }
-    }
-
-    ListNode* reverseKGroup(ListNode* head, int k) {
-
-        ListNode *tail= get_end_node(head, k-1);
-        if(tail == nullptr)return head;
-        else{
-            ListNode *next = reverseKGroup(tail->next, k);
-            swap(head, tail, k);
-            head->next = next;
-            return tail;
-        }
-    }
-
 };
 
-
+int arr[100][100];
 int main(){
-    Solution s;
-    ListNode *target = s.makeTest(10);
-    s.print(target);
-
-    s.print(s.reverseKGroup(target , 2));
-
+    memset(arr, -1, 10000);
+    memset()
+    vector<vector<string>> a(10, vector<string>(20, "a"));
+    cout<<a[0][0];
+    typedef pair<int, int> Point;
+    make_pair(1, 1);
+    deque<Point> deq;
 
     return 0;
 }

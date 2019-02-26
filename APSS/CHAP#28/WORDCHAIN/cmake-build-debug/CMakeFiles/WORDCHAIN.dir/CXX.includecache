@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeunghwankim/Algo/Algorithm/APSS/CHAP#28/WORDCHAIN/main.cpp
+iostream
+-
+stdio.h
+-
+cstring
+-
+vector
+-
+list
+-
+algorithm
+-
+
