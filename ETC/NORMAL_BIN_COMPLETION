@@ -1,0 +1,165 @@
+2002 Bin completion 논문 ex
+
+
+{101, 98, 96, 93, 91, 87, 81, 59, 58, 55, 50, 43, 22, 21, 20, 15, 14, 10, 8, 6, 5, 4, 3, 1. 0}, with a bin capacity of 100.
+
+
+* Capacity보다 크거나 0인 값 filtering
+
+
+{98, 96, 93, 91, 87, 81, 59, 58, 55, 50, 43, 22, 21, 20, 15, 14, 10, 8, 6, 5, 4, 3, 1}
+
+
+* 1개만 넣을 수 있는 값 filtering
+
+
+{98, 96, 93, 91, 87, 81, 59, 58, 55, 50, 43, 22, 21, 20, 15, 14, 10, 8, 6, 5, 4, 3, 1}
+
+*The only element that can go with 98 is 1, so we put them together, leaving
+
+
+{96, 93, 91, 87, 81, 59, 58, 55, 50, 43, 22, 21, 20, 15, 14, 10, 8, 6, 5, 4, 3}
+
+*We place 96 and 4 together, since they sum to exactly the bin capacity. 합쳐서 딱 cap 되는거 제거 
+(논문 근거)
+In that case, we can swap
+y with all other elements in the bin containing x, without
+increasing the number of bins. This gives us a new optimal
+solution with x and y in the same bin. Thus, given a problem
+with two values x and y such that x + y = c, we can always
+put x and y in the same bin, resulting in a smaller problem
+(Gent 1998). Unfortunately, this does not extend to three or
+more elements that sum to exactly the bin capacity
+
+{93, 91, 87, 81, 59, 58, 55, 50, 43, 22, 21, 20, 15, 14, 10, 8, 6, 5, 3}
+
+
+* Since the sum of the two smallest remaining elements, 5 and 3, 
+exceeds the residual capacity of the bin containing 93, we can’t place more than one element in that bin, 
+and choose the largest such element 6 to go with 93. 최대 1개만 더 추가할 수 있는 요소들에 대해 필터링
+(논문)
+As another example, consider an element x such that the
+smallest two remaining elements added to x will exceed c.
+In other words, at most one additional element can be added
+to the bin containing x. Let y be the largest remaining element
+such that x + y ≤ c. Then, we can place y in the same
+bin as x without sacrificing solution quality. The reason is
+that if we placed any other single element z with x, then we
+could swap y with z, since z ≤ y and x + y ≤ c.
+
+{91, 87, 81, 59, 58, 55, 50, 43, 22, 21, 20, 15, 14, 10, 8, 5, 3}
+
+
+* We can complete the bin containing
+91 with 8, 5, 3, or 5 + 3. Since the 8 dominates the other
+single elements, and also the set 5 + 3, we place 8 with 91,
+leaving
+(논문)
+As a final example, assume that y is the largest remaining
+element that can be added to x such that x+y ≤ c, and that y
+equals or exceeds the sum of any set of remaining elements
+that can be added to x without exceeding c. In that case, we
+can again put x and y in the same bin, without sacrificing
+solution quality. The reason is that any other set of elements
+that were placed in the same bin as x could be swapped with
+y without increasing the number of bins. 
+
+{87, 81, 59, 58, 55, 50, 43, 22, 21, 20, 15, 14, 10, 5, 3}
+
+*The bin containing 87 can be completed with 10, 5, 3, 10+3 or 5+3. 
+All of these are dominated by 10+3, so we place 10+3 with 8 (가장 큰거를 dominate?)
+Up to this point, no branching is needed, since there is only one undominated choice 
+for completing each of the bins considered so far.
+
+{81, 59, 58, 55, 50, 43, 22, 21, 20, 15, 14, 5}.
+* 위 가지는 제일 큰 값과 1개의 조합으로 complete 된 경우
+
+* 현재 제일 큰 값이 2개 이상의 조합으로 complete 된다고 하자 . 
+complete 되는 거는 올 수 있는 item들이 있을 때 그것들의 부분집합에 대해, 합쳤을 때  Capacity를 넘지 않는 거를 말한다.  
+The bin containing 81 can be completed with 15, 14, 5, or
+14+5. Both 15 and 14+5 dominate both 14 and 5 individually. // dominate 따질 때 1개 대 1개는 그냥 크기, 그다음부턴 포함되는 관계로?
+However, neither 15 nor 14 + 5 dominate each other,         // dominate 되는 애들끼리는, 더 dominate 되느 애만 생각하면 된다는 거? 
+so both must be considered, producing a two-way branch in    // 같은 개수 부분집합 a. b가 있을 때 a의 모든 값이 b보다 크면 dominate?
+the search. 
+Heuristically, we choose to explore the completion
+with the largest sum first, adding 14 + 5 to the bin with
+81, leaving {59, 58, 55, 50, 43, 22, 21, 20, 15}. We can
+complete the bin containing 59 with 22, 21, 20, 15, 22+15,
+21 + 20, 21 + 15, or 20 + 15. Of these, only 22 + 15 and  //
+21+20 are undominated by any of the others. This produces
+another two-way branch in the search, and we choose the alternative
+with the greater sum, 21 + 20, to place first with
+59, leaving {58, 55, 50, 43, 22, 15}. To complete the bin
+with 58, there is only one undominated choice, 22 + 15, so
+we put these three elements together, leaving {55, 50, 43}.
+
+Note that the only elements which could possibly be
+placed in the same bin with an element of size 58 or larger
+are those of size 42 or smaller. At this point, all elements of
+size 42 or smaller have already been placed in a bin with an
+element of size 58 or larger. While we could rearrange some
+of the smaller elements in those bins, no such rearrangement
+could possibly reduce the number of such bins, because each
+element of size 58 or larger requires its own bin. Thus, there
+is no need to backtrack to either of the branch points we encountered,
+and we can continue the search as if all the previous
+decisions were forced. The general form of this rule is
+the following: If x > c/2, where c is the bin capacity, and
+all elements ≤ c−x have been placed in bins containing elements
+≥ x, then any branch points generated in filling bins
+with elements ≥ x can be ignored.
+
+The remaining problem of {55, 50, 43} requires two more
+bins, yielding an optimal solution of eleven bins, as follows:
+{100}, {98, 1}, {96, 4}, {93, 6}, {91, 8}, {87, 10, 3}, {81,
+14, 5}, {59, 21, 20}, {58, 22, 15}, {55, 43}, {50}.
+
+
+
+/*
+@Input
+ - vector<int> volume
+@Output
+ - minimun bin
+*/
+// volume[i]가 들어갈 수 있는 remaining 중 가장 작은 곳의 idx 
+int answer = 0;
+
+int find(int v, const vector<int> &remaining){
+  int minidx = +inf;
+  int min = +inf;
+  for(int i = 0; i < remaining.size(); ++i){
+    if(remainig[i] < v) continue;
+    if(remaining[i] < min){
+      swap(min, remaining[i]);
+      swap(minidx. i);
+    }
+  }
+  return maxidx;
+}
+
+int func(){
+  sort(volume.begin(), volume.end(). [](int left, int right){return left>right;});
+  list<int> remaining;
+
+  for(int i = 0; i < volume; ++i){
+    // find largest bins , pq 로 개선
+    // volume[i]가 들어갈 수 있는 remaining 중 가장 큰 곳의 idx 
+    auto biter = find(volume[i], remaining);
+    // 들어갈 수 있는 곳이 없음. 새로운 곳에 들어감. 
+    if(bidx == remaining.end())remaining.push(C-remaining);
+    // 있다면
+    else{
+      remaining[bidx] -= volume[i];
+      if(remaining[bidx] == 0){
+        // erase bidx 지점
+      }
+    }
+ 
+  }
+
+  return remaining.size();
+}
+
+
+

@@ -1,0 +1,85 @@
+Research about box packing problem
+
+=========================== P 1 ==============================
+Intro
+ - Problem analysis
+
+Algorithm
+ - Approximation algorithm(NF, FFD, BFD)
+ - Exact algorithm(BC, IBC)
+
+Future works
+
+Reference
+
+* Script
+PT Float 발표. 
+
+Intro
+ 3가지 근사 알고리즘과 그 수도코드
+ Heuristics search를 이용한 optimal solution까지 분석을 했고,  Improved bc에 대한 분석을 진행 중
+근사알고리즘과 exact algorithm을 함께 사용해, 주어진 과제를 해결 중이다. 
+주어진 문제에 대한 분석과, 문제 해결을 위해 살펴본 알고리즘들, 추후 할 일 순으로 발표
+
+
+============================ P  ==============================
+
+Problem analysis
+
+- INPUT RAW DATA :
+PK : (SHPP_NO, SHPP_ITEM_SEQ). FK(OFF_ITM_ID), ITM_NUMBER
+PK : OFF_ITM_ID
+-> 고객당 PACKING 되어야 하는 ITEM들의 VOLUME값을 List 형태로 데이터화
+============================ P  ==============================
+Bin-packing problem
+
+============================ P  ==============================
+
+Problem redefinition
+
+============================ P  ==============================
+
+NF
+- LOGIC
+- ANALYSIS
+============================ P  ==============================
+FFD
+- LOGIC
+- ANALYSIS
+============================ P  ==============================
+BFD
+- LOGIC
+- ANALYSIS
+============================ P  ==============================
+WHY IT IS INSUFFICIENT?
+- APPROXIMATION으로 해서 최적 해를 못구하는 이유
+============================ P  ==============================
+BRUTE FORCE
+============================ P  ==============================
+BIN COMPLETION
+- L2 LOWERBOUND, UPPER BOUND
+- HEURISTIC FACTOR
+============================ P  ==============================
+CONCEPTION
+- PARTITION
+- FEASIBLE SET
+- DOMINANCE RELATION
+============================ P  ==============================
+BIN COMPLETION EXAMPLE
+============================ P  ==============================
+IMPROVING BC
+============================ P  ==============================
+FUTURE WORKS
+============================ P  ==============================
+IMPLEMENTING APPROX. ALOGIRHTM
+IMPLEMNTTING IBC
+ADDAPTING TO REAL SERVICE
+
+
+
+
+
+
+
+
+

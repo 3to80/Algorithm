@@ -1,0 +1,17 @@
+Paper : https://www.aaai.org/ocs/index.php/IJCAI/IJCAI13/paper/view/6851/6656
+
+FFD & BFD
+
+
+A feasible packing is an assignment of elements to bins such
+that the sum of the elements in each bin is not greater than C.
+Any feasible packing of S provides an upper bound. Firstfit
+decreasing (FFD) and best-fit decreasing (BFD) [Johnson,
+1973] are classic approximation algorithms for bin packing.
+For both, we sort the elements of S in decreasing order and
+consider the items one at a time. For FFD, each element
+is placed into the first bin it fits into. For BFD, each element
+is placed into the most full bin it fits into. Consider
+S={15,10,6,4,3,2} and C=20. The FFD and BFD solutions
+are [{15, 4}, {10, 6, 3}, {2}] and [{15, 3, 2}, {10, 6, 4}].
+

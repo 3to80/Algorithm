@@ -1,0 +1,14 @@
+def make_feasible(li, more, sidx, visit, ret):
+    if sidx == len(li):
+        # 선택 안된 애들 t에 대해, t−s+x>c 이면 undominated
+        answer = []
+        for idx, val in enumerate(visit):
+            if val: answer.append(li[idx])
+        ret.append(answer)
+    else:        
+        if more>=li[sidx]:
+            visit[sidx] = True
+            make_feasible(li,more-li[sidx], sidx+1, visit, ret)
+            visit[sidx] = False
+        make_feasible(li, more, sidx+1, visit, ret)
+    
