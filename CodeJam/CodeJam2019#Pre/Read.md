@@ -81,9 +81,9 @@ int main(){
 
 	cin >> T;
 	for(int tt = 1; tt <=T ; ++tt){
-	    int ans = 0;
-        printf("Case #%d: %d\n",tt,ans);
-    }
+		int ans = 0;
+        	printf("Case #%d: %d\n",tt,ans);
+    	}
 	return 0;
 }
   
