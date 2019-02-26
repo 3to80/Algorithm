@@ -68,11 +68,9 @@ public class Solution {
         }
     }
 }
-  
   </code></pre>
   - cpp
   <pre><code>
-
 using namespace std;
 
 int main(){
@@ -86,10 +84,6 @@ int main(){
     	}
 	return 0;
 }
-  
-  
-  
-  
   </code></pre>
 
 
